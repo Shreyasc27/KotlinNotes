@@ -2,44 +2,44 @@
 
 ### 16. Hello World from Kotlin
 
-`In Kotlin, it is possible to write code that is outside the class.`
+* `In Kotlin, it is possible to write code that is outside the class.`
 
-`REPL` - Read Eval Print Loop
+* `REPL` - Read Eval Print Loop
 
-When compiling the Kotlin programs, `Kotlin compiler` compiles that `.kt` files in `byte code` ie `.class` files
+* When compiling the Kotlin programs, `Kotlin compiler` compiles that `.kt` files in `byte code` ie `.class` files
 
-Java : Java Runtime Library
+* Java : Java Runtime Library
 Kotlin : Kotlin Runtime Library
 
-In Kotlin, methods can be created independent of classes.
-When the code is compiled, Kotlin compiler adds classes to the methods.
+* In Kotlin, methods can be created independent of classes.
+* When the code is compiled, Kotlin compiler adds classes to the methods.
 
-Functions defined out classes are called `Top Level Functions`
+* Functions defined out classes are called `Top Level Functions`
 
 ### 17. The Kotlin Standard Library
 
-Kotlin imports whole lot of stuff be default into every Kotlin file.
+* Kotlin imports whole lot of stuff be default into every Kotlin file.
 
-Kotling Standard Library serves the same purpose as what the JDK does.
+* Kotling Standard Library serves the same purpose as what the JDK does.
 
-While distributing the Kotlin application, also have to distribute the Kotlin Runtime.
+* While distributing the Kotlin application, also have to distribute the Kotlin Runtime.
 
 ### 18. Variable Declarations in Kotlin
 
-Kotlin uses `Type Inference`. Compiler can usually figure out or infer the type of the variable based on the context in which you are using it.
-This happens at Compile time and not at Run time.
-Kotlin is a statically type language.
+* Kotlin uses `Type Inference`. Compiler can usually figure out or infer the type of the variable based on the context in which you are using it.
+* This happens at Compile time and not at Run time.
+* Kotlin is a statically type language.
 
-`val` - Declaration is Immutable. Equivalent to final in Java. Recommended in Kotlin.
-For immutable variables, it is possible to change the value of the instance properties.
+* `val` - Declaration is Immutable. Equivalent to final in Java. Recommended in Kotlin.
+* For immutable variables, it is possible to change the value of the instance properties.
 
 ### 19. How to Create Type Aliases in Kotlin
 
-Kotlin Aliases - They help you use another name for the existing type.
+* Kotlin Aliases - They help you use another name for the existing type.
 e.g.
 `typealias EmployeeSet = Set<Employee>`
 `var employees : EmployeeSet`
-Prevents the effort of writing `Set<Employee>` everytime.
+* Prevents the effort of writing `Set<Employee>` everytime.
 
 ### 20. Quick Differences Between Kotlin and Java
 
