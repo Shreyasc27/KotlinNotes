@@ -9,7 +9,7 @@
     * protected
     * internal
     
-##### Top-Level
+#### Top-Level
    
 * If no access modifier is specified, then declaration is `Public`.
 * `Default visibility is Public`
@@ -26,4 +26,19 @@
 * `Public` - Visible everywhere
 * `Internal` - Visible within the same module
 
-##### Class Members
+#### Class Members
+* Anything inside a `Module` that can see a `Class` can also see its `Internal Members`.
+
+* In Kotlin, classes cannot see Private members belonging to Inner classes.
+
+* When Kotlin files compile, the access modifiers have to be compiled to the modifiers that JVM understands.
+    * `Private` is compiled to `Package Private`
+    * `Internal` is compile to `Public`
+
+* Kotlin inforces its visibility rules at Compile time.
+
+### 36. Declaring Classes and USing Constructors in Kotlin
+
+* All classes are `Public` & `Final` by default.
+* Kotlin has a concept of `Primary Constructors` that can be defined outside the Curly braces.
+* Once declared inside the Curly braces of the class are called as `Secondary Constructors`.
