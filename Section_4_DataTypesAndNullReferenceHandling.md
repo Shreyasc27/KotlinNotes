@@ -179,7 +179,7 @@ Uses the lambda expression using the variable `it`
 fun main(args: Array<String>) {
 
     val str: String? = "This isn't null"
-    //val str: String? = null
+    val str: String? = null
 
     str?.let { printText(it) } //let this happen as far as str is not null
 
