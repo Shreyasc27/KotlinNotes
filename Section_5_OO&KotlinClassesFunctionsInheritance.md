@@ -411,6 +411,17 @@ fun String.upperFirstAndLast() : String{
 
 }
 ```
+`Note` - Above function will run after removing `this` as well
+ ```
+ fun String.upperFirstAndLast() : String{
+
+    val upperFirst = this.substring(0, 1).toUpperCase() + this.substring(1)
+    return upperFirst.substring(0, upperFirst.length-1) +
+        upperFirst.substring(upperFirst.length-1, upperFirst.length)
+        .toUpperCase()
+
+}
+```
 
 ### 41. Inline Functions
 
