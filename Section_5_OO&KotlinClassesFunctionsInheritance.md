@@ -252,6 +252,63 @@ O/P -
 Car(color=White, model=i10, year=2017) // Default copy()
 Car(color=White, model=i10, year=2018) // Copy with value over-ridden
 
+### 39. Kotlin function Basics
+
+* When a function is member of the class, it is generally referred to as `method` or `member function`.
+* If you are not returning anything form the function, you are returning `Unit`.
+`fun main(args: Array<String>)` is same as `fun main(args: Array<String>) : Unit`
+* Functions with curly braces have `Block body`. Functions without curly braces have `Expression body`.
+
+```
+fun main(args: Array<String>){
+
+    println(labelMultiply1(3, 4, "Result : "))
+    println(labelMultiply2(3, 5, "[Make function 1 liner] Result : "))
+    println(labelMultiply3(3, 6, "[Remove return type from function] Result : "))
+
+}
+
+fun labelMultiply1(op1: Int, op2: Int, msg: String) : String{
+
+    return ("$msg${op1 * op2}")
+
+}
+
+fun labelMultiply2(op1: Int, op2: Int, msg: String) : String = "$msg${op1 * op2}" //Make the function 1 liner
+
+fun labelMultiply3(op1: Int, op2: Int, msg: String) = "$msg${op1 * op2}" //Remove return type
+```
+#### main function - expression body
+```
+fun main(args: Array<String>)= println(labelMultiply1(3, 4, "Result : "))
+```
+#### Name Argumets 
+* Calling the function and naming the arguments
+```
+fun main(args: Array<String>)= println(labelMultiply1(op1=3, op2=4, label="Result : "))
+```
+#### vararg
+* Kotlin can have functions that can have arbitary number of arguments
+* Only `vararg` per function signature
+```
+fun main(args: Array<String>){
+
+    val car1 = Cars("i10", "White", 2014)
+    val car2 = Cars("Swift", "Blue", 2014)
+    val car3 = Cars("Baleno", "Navy Blue", 2014)
+
+    printCarNameColors(car1, car2, car3)
+
+}
+
+fun printCarNameColors(vararg cars : Cars){
+    for(car in cars){
+        println(car.model + " -- " + car.color)
+    }
+}
+```
+
+
 ### 41. Inline Functions
 
 * When `Inline Function` is compiled, it is not compiled to a function. It is compiled to its body.
