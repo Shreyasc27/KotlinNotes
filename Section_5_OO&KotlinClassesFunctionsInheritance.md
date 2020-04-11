@@ -37,7 +37,7 @@
 
 * Kotlin inforces its visibility rules at Compile time.
 
-### 36. Declaring Classes and USing Constructors in Kotlin
+### 36. Declaring Classes and Using Constructors in Kotlin
 
 * All classes are `Public` & `Final` by default.
 
