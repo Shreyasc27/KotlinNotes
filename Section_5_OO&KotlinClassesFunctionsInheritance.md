@@ -288,8 +288,8 @@ fun main(args: Array<String>)= println(labelMultiply1(3, 4, "Result : "))
 fun main(args: Array<String>)= println(labelMultiply1(op1=3, op2=4, label="Result : "))
 ```
 #### vararg
-* Kotlin can have functions that can have arbitary number of arguments
-* Only `vararg` per function signature
+* Kotlin can have functions that can have arbitary number of arguments i.e. Number of cars below are 3 but they can be 5 as well.
+* Only `vararg` parameter per function signature
 ```
 fun main(args: Array<String>){
 
@@ -307,7 +307,110 @@ fun printCarNameColors(vararg cars : Cars){
     }
 }
 ```
+* Additional parameter
+```
+fun main(args: Array<String>){
 
+    val car1 = Cars("i10", "White", 2014)
+    val car2 = Cars("Swift", "Blue", 2014)
+    val car3 = Cars("Baleno", "Navy Blue", 2014)
+
+    printCarNameColors(car1, car2, car3, str = "Color is:  ")
+
+}
+
+fun printCarNameColors(vararg cars: Cars, str: String ){
+    for(car in cars){
+        println(car.model + " -- " + car.color)
+    }
+}
+```
+`Spread Operator (*)` 
+* Used to get the actual elements of the array
+* Without Spread Operator
+```
+fun main(args: Array<String>){
+
+    val car1 = Cars("i10", "White", 2014)
+    val car2 = Cars("Swift", "Blue", 2014)
+    val car3 = Cars("Baleno", "Navy Blue", 2014)
+
+    val manyCars = arrayOf(car1, car2, car3)
+
+    val moreCars = arrayOf(car2, car3)
+
+    val car4 = car1.copy()
+
+    var multipleCarArray = arrayOf(manyCars, moreCars, car4)
+
+    for(car in multipleCarArray){
+        println(car)
+    }
+
+}
+O/P - 
+[Lacademy.learning.Cars;@60e53b93
+[Lacademy.learning.Cars;@5e2de80c
+Cars(model=i10, color=White, year=2014)
+```
+* With Spread Operator
+```
+fun main(args: Array<String>){
+
+    val car1 = Cars("i10", "White", 2014)
+    val car2 = Cars("Swift", "Blue", 2014)
+    val car3 = Cars("Baleno", "Navy Blue", 2014)
+
+    val manyCars = arrayOf(car1, car2, car3)
+
+    val moreCars = arrayOf(car2, car3)
+
+    val car4 = car1.copy()
+
+    var multipleCarArray = arrayOf(*manyCars, *moreCars, car4)
+
+    for(car in multipleCarArray){
+        println(car)
+    }
+
+}
+O/P - 
+Cars(model=i10, color=White, year=2014)
+Cars(model=Swift, color=Blue, year=2014)
+Cars(model=Baleno, color=Navy Blue, year=2014)
+Cars(model=Swift, color=Blue, year=2014)
+Cars(model=Baleno, color=Navy Blue, year=2014)
+Cars(model=i10, color=White, year=2014)
+```
+
+### 40. Extension Functions
+
+* Extension functions let you extend any class you want to extend.
+* For adding the methods.
+* But that is not sub classing. 
+* `Extension functions` create an illusion of adding methods to a specific class. Eg - If we have created certain String manipulation functions then instead of writing these methods in a separate class these methods can be added as Extension functions to the String class.
+`Note` : To make a function an Extension -
+* `String.` is added before the name of the function
+* String argument is removed as it is a string function
+* String variable is referred to with `this`
+* In this example, String is the class we are extending. Hence it is a `Receiver type`
+```
+fun main(args: Array<String>) {
+
+    val sampleStr = "stay hungry stay foolish"
+    println(sampleStr.upperFirstAndLast())
+
+}
+
+fun String.upperFirstAndLast() : String{
+
+    val upperFirst = this.substring(0, 1).toUpperCase() + this.substring(1)
+    return upperFirst.substring(0, upperFirst.length-1) +
+        upperFirst.substring(upperFirst.length-1, upperFirst.length)
+        .toUpperCase()
+
+}
+```
 
 ### 41. Inline Functions
 
