@@ -45,6 +45,13 @@
 * Kotlin has a concept of `Primary Constructors` that can be defined outside the Curly braces.
 * Since `Primary Constructors` are outside the curly braces, they cannot hold the code. So if there is something to be done, that is to be done using the `init` block.
 ```
+fun main(args : Array<String>) {
+
+    val emp = Employee("Shrungi")
+    print("${emp.firstName}")
+
+}
+
 class Employee constructor(firstName: String){
 
     val firstName: String
@@ -73,15 +80,82 @@ class Employee(val firstName: String){
 }
 
 ```
-* When defining a constructor with specific access, the keyword constructor has to be mentioned explicitly. If public, then not needed.
+* When defining a constructor with specific access, the keyword constructor has to be mentioned explicitly. If access is public, then not needed.
 ```
 class Employee protected constructor(val firstName: String){
 
 }
 
 ```
-
+#### Secondary Constructors
 * Once declared inside the Curly braces of the class are called as `Secondary Constructors`.
+* If a class has a `Primary Constructor` in the class then the `Secondary Constructor` has to delegate to the `Primary Constructor`.
+```
+fun main(args : Array<String>) {
+
+    val emp1 = Employee("Shrungi")
+    println("${emp1.firstName}")
+
+    val emp2 = Employee("Shreyas")
+    println("${emp2.firstName}")
+    println("${emp2.fullTime}")
+
+    val emp3 = Employee("Sanjeev", false)
+    println("${emp3.firstName}")
+    println("${emp3.fullTime}")
+
+}
+
+class Employee constructor(val firstName: String){
+
+    var fullTime: Boolean = true
+
+    //this(firstName) makes sure that the default constructor is used
+    constructor(firstName: String, fullTime: Boolean) : this(firstName){
+        this.fullTime = fullTime
+    }
+
+}
+```
+* When the multiple values are to be defined as a part of the `primary constructor` and initialized a default value as well.
+```
+fun main(args : Array<String>) {
+
+    val emp1 = Employee("Shrungi")
+    println("${emp1.firstName}")
+
+    val emp2 = Employee("Shreyas")
+    println("${emp2.firstName}")
+    println("${emp2.fullTime}")
+
+    val emp3 = Employee("Sanjeev", false)
+    println("${emp3.firstName}")
+    println("${emp3.fullTime}")
+
+}
+
+class Employee constructor(val firstName: String, var fullTime: Boolean = true){
+
+}
+```
+* It is absolutely okay to not have `Primary Constructor`. In that case, we do not have to differ to anything.
+```
+fun main(args : Array<String>) {
+
+    println(Department().name)
+
+}
+
+class Department{
+
+    val name: String
+
+    constructor() {
+        name = "N26"
+    }
+
+}
+```
 
 #### init blocks
 * `init` block runs when the instance is created and it runs in conjuction with the primary constructor.
