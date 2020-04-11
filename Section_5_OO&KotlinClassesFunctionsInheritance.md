@@ -425,8 +425,7 @@ fun String.upperFirstAndLast() : String{
 
 ### 41. Inline Functions
 
-* When `Inline Function` is compiled, it is not compiled to a function. It is compiled to its body.
+* When `Inline Function` is compiled, its body is directly compiled for the function call.
+* It is not compiled to function at all. It is compiled to its body.
 * If you do not mark the function as `Inline` does not mean it will not be `Inline`. JVM might decide to make it `Inline` as well.
-* Inlining qorks best for functions with Lambda paramters.
-
-??? Need to study this concept more
+* Inlining works best for functions with Lambda paramters.
