@@ -429,3 +429,60 @@ fun String.upperFirstAndLast() : String{
 * It is not compiled to function at all. It is compiled to its body.
 * If you do not mark the function as `Inline` does not mean it will not be `Inline`. JVM might decide to make it `Inline` as well.
 * Inlining works best for functions with Lambda paramters.
+
+### 48. Enums
+
+* Kotlin has `enum class` to declare enums
+* Can declare properties in `enum`
+* When you add function to the enum, you will have to add ';' after the next enum
+```
+fun main(args: Array<String>) {
+
+    println(testStatus.PASSED.printTestStatus())
+
+}
+
+enum class testStatus(val msg: String, val count: Int){
+
+    PASSED ("Number of Passed Tests", 5),
+    FAILED ("Number of Failed Tests", 4),
+    SKIPPED ("Number of Skipped Tests", 1);
+
+    fun printTestStatus() = "$msg : $count"
+
+}
+```
+
+### 49. Imports in Kotlin
+
+#### Packages
+* Package names do not have to match the directory structure
+```
+package academy.learning.anotherpackage
+
+import academy.learning.labelMultiply3
+
+fun main(args: Array<String>) {
+
+    println(labelMultiply3(5, 6, "Multiplicaton Result : "))
+
+}
+```
+
+#### Module
+* If a Module wants to make the use of the method from the package of the parent project, then the module will have to be added as a dependency.
+```
+package com.academy.learning
+
+import academy.learning.labelMultiply3
+
+fun main(args: Array<String>){
+
+    println(labelMultiply3(5, 6, "Multiplicaton Result : "))
+
+}
+```
+
+### 50. Internal Access Modifier
+
+* Visible within the same module
