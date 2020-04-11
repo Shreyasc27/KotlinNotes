@@ -1,4 +1,4 @@
-# Section 5 : OO And Kotlin : Classes, Functions, Inheritance
+*# Section 5 : OO And Kotlin : Classes, Functions, Inheritance
 
 ### 35. Access Modifier
 
@@ -40,5 +40,49 @@
 ### 36. Declaring Classes and USing Constructors in Kotlin
 
 * All classes are `Public` & `Final` by default.
+
+#### Primary Constructors
 * Kotlin has a concept of `Primary Constructors` that can be defined outside the Curly braces.
+* Since `Primary Constructors` are outside the curly braces, they cannot hold the code. So if there is something to be done, that is to be done using the `init` block.
+```
+class Employee constructor(firstName: String){
+
+    val firstName: String
+
+    init{
+        this.firstName = firstName
+    }
+
+}
+
+//OR - Getting rid of the the `init` block
+class Employee constructor(firstName: String){
+
+    val firstName: String = firstName
+
+}
+
+//OR - Constructor definition also being property declaration
+class Employee constructor(val firstName: String){
+
+}
+
+//OR - Removing the keyword constructor
+class Employee(val firstName: String){
+
+}
+
+```
+* When defining a constructor with specific access, the keyword constructor has to be mentioned explicitly. If public, then not needed.
+```
+class Employee protected constructor(val firstName: String){
+
+}
+
+```
+
 * Once declared inside the Curly braces of the class are called as `Secondary Constructors`.
+
+#### init blocks
+* `init` block runs when the instance is created and it runs in conjuction with the primary constructor.
+* There can be mulitple `init` blocks within the same class.
