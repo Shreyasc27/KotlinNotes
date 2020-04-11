@@ -464,7 +464,7 @@ import academy.learning.labelMultiply3
 
 fun main(args: Array<String>) {
 
-    println(labelMultiply3(5, 6, "Multiplicaton Result : "))
+    println(labelMultiply3(5, 6, "[From Another Package] Multiplicaton Result : "))
 
 }
 ```
@@ -478,10 +478,35 @@ import academy.learning.labelMultiply3
 
 fun main(args: Array<String>){
 
-    println(labelMultiply3(5, 6, "Multiplicaton Result : "))
+    println(labelMultiply3(5, 6, "[From Another Module]  Multiplicaton Result : "))
+    println(testStatus.PASSED.printTestStatus())
 
 }
 ```
+
+* Imports can be shortened by using `as` for Objects, Top-Level Functions
+```
+package com.academy.learning
+
+import academy.learning.labelMultiply3 as lblMult3
+
+fun main(args: Array<String>){
+
+    println(lblMult3(5, 6, "[From Another Module] Multiplicaton Result : "))
+
+}
+
+* Imports also work for `Extension functions`
+```
+package com.academy.learning
+
+import academy.learning.javacode.upperFirstAndLast
+
+fun main(args: Array<String>){
+
+    println("shreyas chaudhari".upperFirstAndLast())
+
+}
 
 ### 50. Internal Access Modifier
 
