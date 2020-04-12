@@ -500,6 +500,62 @@ class SpecialLaserPrinter(modelName: String) : LaserPrinter(modelName){
 
 ### 44. Interfaces
 
+* When a class extends another class, `open` keyword has to be used. But in case of interfaces, that is not needed.
+```
+interface myInterface{
+
+    fun myFunction(str: String)
+
+}
+
+interface mySubIntreface : myInterface{
+
+    fun mySubFunction(num: Int)
+
+}
+
+class myClass : mySubIntreface{
+
+    override fun mySubFunction(num: Int) {
+
+    }
+
+    override fun myFunction(str: String) {
+
+    }
+
+}
+```
+* If a property is defined, then its value has to be provided in the class that implements it.
+`Concrete Implementation`
+```
+interface myInterface{
+
+    fun myFunction(str: String)
+    val number: Int
+
+}
+
+interface mySubIntreface : myInterface{
+
+    fun mySubFunction(num: Int)
+
+}
+
+class myClass() : mySubIntreface{
+
+    override val number: Int = 25 //Concrete Implementation
+
+    override fun mySubFunction(num: Int) {
+
+    }
+
+    override fun myFunction(str: String) {
+
+    }
+
+}
+```
 
 ### 45. Singletons
 
