@@ -4,6 +4,7 @@
 * `Ranges` - Have start anf the end value. Can be used for For loop or Can be assigned to variables.
 * Any type that is `comparable` can be used in a range.
 * `in` operator is used to check if the value is in range.
+* Loops can be named using '@'. Eg - 
 ```
 package academy.learningprogramming.loops
 
@@ -86,14 +87,12 @@ fun main(args: Array<String>) {
     val notInRange = 32 !in 1..10
     println(notInRange)
 
-}
-```
-* Loops can be named using '@'. Eg - 
-```
-loopSeasons@ for(season in seasons){
+    loopSeasons@ for(season in seasons){
         println(season)
     }
 
-    break@loopSeasons
-    continue@loopSeasons
+    //break@loopSeasons
+    //continue@loopSeasons
+
+}    
 ```
