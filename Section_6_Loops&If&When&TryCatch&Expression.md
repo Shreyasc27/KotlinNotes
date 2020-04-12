@@ -65,6 +65,7 @@ fun main(args: Array<String>) {
     }
 }
 ```
+```
 fun main(args: Array<String>) {
 
     val seasons = arrayOf("spring", "summer", "winter", "fall")
