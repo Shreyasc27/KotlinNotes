@@ -463,6 +463,51 @@ class LaserPrinter(modelName: String) : Printer(modelName) {
 
 }
 ```
+* `override` also means `open`. So when we use the `override` keyword, what we also mean is that the function is `open`.
+* If we do not want the method of a class to be `overridden` further, then make the use of the `final` keyword. This is the only place where the keyword `final` is explicitly used.*
+```
+package academy.learnprogramming.inheritance
+
+fun main(args : Array<String>){
+
+    val laser = LaserPrinter("Xenon")
+    laser.displayModel()
+
+}
+
+abstract class Printer(val modelName: String){
+
+    open fun displayModel() = println("Model name is $modelName")
+    abstract fun bestSellingPrice(): Double
+
+}
+
+open class LaserPrinter(modelName: String) : Printer(modelName) {
+
+    final override fun displayModel() = println("Laser Printer Model name is $modelName")
+    override fun bestSellingPrice(): Double = 129.99
+
+}
+
+class SpecialLaserPrinter(modelName: String) : LaserPrinter(modelName){
+    
+    override fun displayModel() = println("Special Laser Printer Model name is $modelName") // Gives Error
+    
+}
+```
+* Calling `super secondary constructor` only makes sense if there is no `primary constructor`.
+* `Data classes` are closed tight. They cannot be extended.
+
+### 44. Interfaces
+
+
+### 45. Singletons
+
+
+### 46. Companions
+
+
+### 47. Anonymous Objects 
 
 
 ### 48. Enums
