@@ -157,12 +157,132 @@ class Department{
 
 }
 ```
+`Example covering all the concepts above`
+```
+package academy.learnprogramming.oochallenge
+
+open class kotlinBicycle (var cadence: Int, var speed: Int, var gear: Int){
+
+    fun kotlinApplyBrake(decrement: Int){
+        speed -= decrement
+
+    }
+
+    fun kotlinSpeedUp(increment: Int){
+        speed += increment
+
+    }
+
+    open fun printDescription(){
+
+        println("Bike is in gear $gear with a cadence of $cadence travelling at a speed of $speed.")
+
+    }
+
+}
+
+class kotlinMountainBike(var seatHeight: Int, cadence: Int, speed: Int, gear: Int) : kotlinBicycle(cadence, speed,
+    gear){
+
+    override fun printDescription(){
+
+        super.printDescription()
+        println("Mountain Bike has a seat height of $seatHeight.")
+
+    }
+
+}
+
+class kotlinRoadBike(val tireWidth: Int, cadence: Int, speed: Int, gear: Int) : kotlinBicycle(cadence, speed,
+    gear){
+
+    override fun printDescription(){
+
+        super.printDescription()
+        println("Road Bike has a seat height of $tireWidth.")
+
+    }
+
+}
+
+```
+`Secondary Constructor`
+```
+package academy.learnprogramming.oochallenge
+
+fun main(args: Array<String>){
+
+    val kBic = kotlinBicycle(2, 40)
+    val kMB = kotlinMountainBike(3, 3, 30)
+    val kRB = kotlinMountainBike(4, 2, 50, color = "Green")
+
+    kBic.printDescription()
+    kMB.printDescription()
+    kRB.printDescription()
+
+}
+
+open class kotlinBicycle (var cadence: Int, var speed: Int, var gear: Int = 10){
+
+    fun kotlinApplyBrake(decrement: Int){
+        speed -= decrement
+
+    }
+
+    fun kotlinSpeedUp(increment: Int){
+        speed += increment
+
+    }
+
+    open fun printDescription(){
+
+        println("Bike is in gear $gear with a cadence of $cadence travelling at a speed of $speed.")
+
+    }
+
+}
+
+class kotlinMountainBike(var seatHeight: Int, cadence: Int, speed: Int, gear: Int = 15) : kotlinBicycle(cadence, speed,
+    gear){
+
+    var color: String = "Red"
+
+    constructor(seatHeight: Int, cadence: Int, speed: Int, gear: Int = 3, color: String) : this(seatHeight, cadence,
+        speed, gear){
+        this.color = color
+        println("This is the $color")
+    }
+
+    override fun printDescription(){
+
+        super.printDescription()
+        println("Mountain Bike has a seat height of $seatHeight.")
+
+    }
+
+}
+
+class kotlinRoadBike(val tireWidth: Int, cadence: Int, speed: Int, gear: Int = 20) : kotlinBicycle(cadence, speed,
+    gear){
+
+    override fun printDescription(){
+
+        super.printDescription()
+        println("Road Bike has a seat height of $tireWidth.")
+
+    }
+
+}
+```
 
 #### init blocks
 * `init` block runs when the instance is created and it runs in conjuction with the primary constructor.
 * There can be mulitple `init` blocks within the same class.
 
 ### 37. Properties and Backing Fields in Kotlin
+* Kotlin classes can only have properties. They do not have fields.
+??? Need to understand this better
+
 
 ### 38. Constants and Data Classes
 
@@ -617,7 +737,7 @@ class someClass{
 ### 47. Anonymous Objects 
 
 * `Anonymous Objects` are used where we used `Anonymous Classes` in Java.
-
+??? Need to understand this better
 
 ### 48. Enums
 
