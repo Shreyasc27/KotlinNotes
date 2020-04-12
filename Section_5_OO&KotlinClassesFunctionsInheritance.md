@@ -430,6 +430,41 @@ fun String.upperFirstAndLast() : String{
 * If you do not mark the function as `Inline` does not mean it will not be `Inline`. JVM might decide to make it `Inline` as well.
 * Inlining works best for functions with Lambda paramters.
 
+### 42. 43. Inheritance 
+
+* Everything in Kotlin is `public` and `final` buy default.
+* `open` - When the class is to be extended then it has to get rid of the default `final`. In that case, the class is made `open`.
+* `open` keyword is not to be used with the `abstract` classes.
+* When the need is for something to be `extendable` or `overridden`, then make the use of the `open` keyword unless it is `abstract`.
+* When we override a function from the superclass, then we have to use the `override` keyword next to the function.
+* When making use of the `abstract classes` or `abstract keyword`, we need not make the use of the `open` keyword.
+
+```
+package academy.learnprogramming.inheritance
+
+fun main(args : Array<String>){
+
+    val laser = LaserPrinter("Xenon")
+    laser.displayModel()
+
+}
+
+abstract class Printer(val modelName: String){
+
+    open fun displayModel() = println("Model name is $modelName")
+    abstract fun bestSellingPrice(): Double
+
+}
+
+class LaserPrinter(modelName: String) : Printer(modelName) {
+
+    override fun displayModel() = println("Laser Printer Model name is $modelName")
+    override fun bestSellingPrice(): Double = 129.99
+
+}
+```
+
+
 ### 48. Enums
 
 * Kotlin has `enum class` to declare enums
@@ -510,4 +545,6 @@ fun main(args: Array<String>){
 
 ### 50. Internal Access Modifier
 
-* Visible within the same module
+* `Private` Only accessible within the class
+* `Internal` Only visible within the same module
+* If the class is `private` then there is no meaning in declaring its members are `internal` because anyways they are accessible only within the class. 
