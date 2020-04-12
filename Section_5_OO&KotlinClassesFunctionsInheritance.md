@@ -558,7 +558,35 @@ class myClass() : mySubIntreface{
 ```
 
 ### 45. Singletons
+* There are 3 use cases for the object keyword -
+    * Singleton
+    * Companion objects
+    * Object expressions
+* Singleton is used when we want only one and one instance of the class while the application is running.
+* When we need Singleton in Kotlin, we make use of the `Object` keyword because this way there will be only one instance of the object class.
+* When we declare the `Object` class what we say is we want only one and one instance of the class.
+* There is ever a one instance of the object and it is created the first time the class is used.
+* `Singletons` can extends other Classes or implement Interfaces.
+```
+package academy.learnprogramming.inheritance
 
+import java.time.Year
+
+fun main(args: Array<String>){
+
+    println(ObjectCompanions.getTagLine())
+    println(ObjectCompanions.getTradeMark())
+
+}
+
+object ObjectCompanions {
+
+    val currentYear = Year.now().value
+    fun getTagLine() = "Our Company Rocks!"
+    fun getTradeMark() = "Copyright \u00A9 Our company. All rights reserved."
+
+}
+```
 
 ### 46. Companions
 
