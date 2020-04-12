@@ -589,9 +589,34 @@ object ObjectCompanions {
 ```
 
 ### 46. Companions
+* `static` keyword does not exist in Kotlin.
+* `Companion objects` can be created inside classes and they can be accessed inside classes without creating an instance of the class.
+* Everything within the `Companion Object` is static which is equivalent of what we had in Java.
+```
+fun main(args: Array<String>){
 
+    println(someClass.someCompanion.accessPrivateVar())
+    println(someClass.accessPrivateVar()) // This and the line above means the same
+
+}
+
+class someClass{
+
+    companion object someCompanion{
+
+        private var privateVar = 6
+
+        fun accessPrivateVar() = "I'm accessing private var $privateVar"
+
+    }
+
+}
+```
+* `Companion objects` can be used to call `Private constructors`. 
 
 ### 47. Anonymous Objects 
+
+* `Anonymous Objects` are used where we used `Anonymous Classes` in Java.
 
 
 ### 48. Enums
