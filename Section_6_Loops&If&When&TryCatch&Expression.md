@@ -102,7 +102,8 @@ fun main(args: Array<String>) {
 ### 55. The If Expression
 * `If` can evaluate to a value.
 * `Iternary Operator` does not exist in Kotlin.
-* When `If` is to be used as an expression there has to be both if and else.    
+* When `If` is to be used as an expression there has to be both if and else.   
+* `When` should be exhaustive. It should have necessary Else branch. 
 ```
 fun main(args: Array<String>){
 
@@ -116,6 +117,115 @@ fun main(args: Array<String>){
 ```
 
 ### 56. When Expression
+
+* `When` is `Switch`.
+* Like `Switch` there is no `break` in `When`. So in Kotlin, only 1 branch can be executed at any point in time.
+```
+fun main(args: Array<String>){
+
+    val num = 12
+
+    when(num){
+
+        in 10..15 -> println("Range 10 to 15")
+        100, 600 -> println("100-600")
+        200 -> println("200")
+        300 -> println("300")
+        else -> println("Doesn't match anything")
+
+    }
+
+}
+```
+`Expressions in When`
+```
+fun main(args: Array<String>){
+
+    val num1 = 100
+    val x = 20
+
+    when(num1){
+        x + 80 -> println("90")
+        x + 90 -> println("100")
+        x + 100 -> println("110")
+    }
+
+}
+```
+`When - Smart Casting`
+```
+fun main(args: Array<String>){
+
+    val obj1 : Any = "String"
+    val obj2 : Any = BigDecimal(20.55)
+    val obj3 : Any = 32
+
+    val obj = obj1
+
+    when(obj){
+        is String -> println("String")
+        is BigDecimal -> println("Big Decimal")
+        is Integer -> println("Integer")
+    }
+
+}
+```
+`Exhaustive Else Branch` - When assigning value of `When` to variable.
+```
+fun main(args: Array<String>){
+
+    val obj1 : Any = "String"
+    val obj2 : Any = BigDecimal(20.55)
+    val obj3 : Any = 32
+
+    val obj = null
+
+    val z = when(obj){
+        is String -> println("String")
+        is BigDecimal -> println("Big Decimal")
+        is Integer -> println("Integer")
+        else -> println("Unknown Type")
+    }
+
+}
+```
+`Enums - When` - Branches in Enum are exhaustive. Hence do not need an `else`.
+* If any of the values from the enum are removed, then the `else` will become mandatory.
+```
+enum class Season{
+    SPRING, SUMMER, WINTER, FALL
+}
+
+fun main(args: Array<String>){
+
+    val timeOfTheYear = Season.FALL
+    
+    val season = when(timeOfTheYear){
+        Season.WINTER -> println("WINTER")
+        Season.SPRING -> println("SPRING")
+        Season.SUMMER -> println("SUMMER")
+        Season.FALL -> println("FALL")
+    }
+
+    println(season)
+
+}
+```
+`Conditions - When`
+```
+fun main(args: Array<String>){
+
+    val numb1 = 100
+    val numb2 = 200
+
+    when{
+        numb1 < numb2 -> println("Numb1 < Numb2")
+        numb1 > numb2 -> println("Numb1 > Numb2")
+        else -> println("Numb1 == Numb2")
+    }
+
+}
+```
 
 ### 57. Try/Catch Expression
 * `try-catch` is similar to the one in Java. However, in Kotlin, `try-catch` can be used as an expression. 
