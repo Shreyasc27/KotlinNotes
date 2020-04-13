@@ -1,4 +1,4 @@
-# Section 2: Introduction to Kotlin
+# Section 2 : Introduction to Kotlin
 
 ### 11. Introduction to Kotlin
 

@@ -1,4 +1,4 @@
-# Section 6: Loops, and the If, When, and Try/Catch Expressions
+# Section 6 : Loops, and the If, When, and Try/Catch Expressions
 
 ### 54. For Loop
 

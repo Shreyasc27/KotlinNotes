@@ -1,4 +1,4 @@
-# Section 3: Basic Differences Between Kotlin and Java
+# Section 3 : Basic Differences Between Kotlin and Java
 
 ### 16. Hello World from Kotlin
 

@@ -1,4 +1,4 @@
-# Section 4: Data Types and Null Reference Handling
+# Section 4 : Data Types and Null Reference Handling
 
 ### 28. The Builtin Data Types in Kotlin
 

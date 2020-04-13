@@ -1,4 +1,4 @@
-# Section 8: File IO
+# Section 8 : File IO
 
 ### 76. Reading Text Files
 
