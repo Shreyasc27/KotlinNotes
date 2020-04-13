@@ -2,7 +2,7 @@
 
 1. [Introduction To Kotlin](Section_2_IntroductionToKotlin.md)
 
-2. [Basic Diference Between Kotlin And Java](Section_3_BasicDifferencesBetweenKotlinAndJava.md)
+2. [Basic Difference Between Kotlin And Java](Section_3_BasicDifferencesBetweenKotlinAndJava.md)
 
 3. [Data Types And Null Reference Handling](Section_4_DataTypesAndNullReferenceHandling.md)
 
